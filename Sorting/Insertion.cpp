@@ -14,18 +14,15 @@ int main()
     {
         cin>>a[i];
     }
-    for(int i=1;i<n;i++)
+    for(int i=0;i<n;i++)
     {
-        for(int j=i;j>0;j--)
+        int j=i;
+        while(j>0&&a[j-1]>a[j])
         {
-            if(a[j-1]>a[j])
-            {
-                int t=a[j];
-                a[j]=a[j-1];
-                a[j-1]=t;
-            }
-           
+            swap(a[j-1],a[j]);
+            j--;
         }
+
     }
     for(auto x: a)
     {
